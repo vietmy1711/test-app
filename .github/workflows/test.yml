@@ -17,4 +17,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Notify commit
-        run: curl -d $GITHUB_SHA -w "\n" -X POST http://10.174.65.92/commit-received
+        run: curl -d nguvcl -w "\n" -X POST http://10.174.65.92/commit-received
