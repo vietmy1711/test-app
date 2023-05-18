@@ -1,0 +1,20 @@
+name: Test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    name: Notify
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Notify commit
+        run: curl -d $GITHUB_SHA -w "\n" -X POST http://10.174.65.92/commit-received
